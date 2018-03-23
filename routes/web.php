@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,9 +13,11 @@
 */
 
 
+
 Route::get('/', function () {
     return view('Welcome');
 });
+
 
 
 /*
@@ -109,5 +112,21 @@ Route::get('/phone', function (){
 });
 
 
+Route::get('/evenement', function (){
 
+//    App\Event::create([
+//        'name' => 'One Man Show de Debbouze ' ,
+//        'description' => '100% de rigolade ' ,
+//        'location' => 'Nice, FR ' ,
+//        'price' => 50
+//    ]);
+
+    $events = App\Event::all();
+
+    return view('evenements.index')->withEvents($events);
+});
+
+Config::set('view.paths', [base_path().'/mes_vues']);
+Session::put('clef', 'valeur');
+$valeur = Session::get('clef');
 

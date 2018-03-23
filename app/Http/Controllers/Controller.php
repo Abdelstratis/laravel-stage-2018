@@ -23,7 +23,7 @@ class Controller extends BaseController
 
         DB::table('client')->insert($data);
 
-        echo'Formulaire reçu !';
+        echo'Formulaire reçu ! <br> <a href="http://localhost/laravel5/public/data"> Data </a>';
 
 
 
